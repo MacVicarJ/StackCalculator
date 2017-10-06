@@ -1,11 +1,12 @@
-import java.util.Vector;
+package edu.wit.dcsn.comp2000.stackadt;
 
-//use two stacks one for operations and one for numbers 
+
+
 public class StackCalculator {
 	private StackInterface<Integer> operandStack;
 	private StackInterface<Character> operatorStack;
-
-	StackCalculator()
+	
+		StackCalculator()
 	{
 		operandStack = new VectorStack<Integer>();
 		operatorStack = new VectorStack<Character>();
@@ -14,7 +15,7 @@ public class StackCalculator {
 	int calculate(String expression)
 	{
 		// loop through expression
-		// for i = 0 i < expression.length i++
+		// for (i = 0 i < expression.length i++
 		// 		if (isDigit( expression.charAt(i) )
 		//			push to operandStack
 		//      else
@@ -43,7 +44,37 @@ public class StackCalculator {
 				}
 			}
 		}
+		while (!operatorStack.isEmpty()){
+		int first = operandStack.pop();
+		char operator1 = operatorStack.pop();
+		int	second = operandStack.pop();
+			executeCalc(first, second, operator1);
+		}
+		return operandStack.pop();
+	}
+	
+	public int executeCalc(int firstOperand, int secondOperand, char operator){
+		int result;
+		switch(operator){
+		case 1: operator = '-';
+				result = firstOperand - secondOperand;
+				operandStack.push(result);
+				break;		
+		case 2: operator = '+';
+				result = firstOperand + secondOperand;
+				operandStack.push(result);
+				break;
+		case 3: operator = '*';
+				result = firstOperand * secondOperand;
+				operandStack.push(result);
+				break;
+		case 4: operator = '/';
+				result = firstOperand / secondOperand;
+				operandStack.push(result);
+				break;
+		}
 		return 0;
+		
 	}
 	
 	private final boolean isDigit(char c){
