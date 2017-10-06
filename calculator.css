@@ -1,0 +1,32 @@
+/*
+ * Group #37
+ * Scott Austin, Erich Hauntsman, Jack MacVicar
+ * COMP 2000-03
+ * Application 2: Stack Application: Calculator
+ * Due Monday 10/09/2017
+ */
+
+.root {
+	-fx-focus-color: transparent;
+	-fx-faint-focus-color: transparent;
+}
+
+.text-field {
+	-fx-alignment: center-right;
+	-fx-font: 30px "Courier New";
+}
+
+.button {
+	-fx-font-size: 1.5em;
+	-fx-font-weight: bold;
+	-fx-background-color: transparent;
+	-fx-background-insets: 2px 2px 2px 2px;
+	-fx-border: 1px 1px 1px 1px;
+	-fx-border-style: solid;
+	-fx-border-color: lightgrey;
+	-fx-border-insets: 2px 2px 2px 2px;
+}
+
+.button:hover {
+	-fx-background-color: gainsboro;
+}
