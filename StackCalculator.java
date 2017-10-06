@@ -38,9 +38,10 @@ public class StackCalculator {
 			}else{
 				
 				while(!operatorStack.isEmpty() && precedence(nextCharacter)){
-					operatorStack.pop();
-					operandStack.pop();
-					operandStack.pop(); 
+					int operatorOne = operatorStack.pop();
+					int operandOne = operandStack.pop();
+					int operandTwo = operandStack.pop(); 
+					executeCalc(operandOne, operandTwo, operatorOne);
 				}
 			}
 		}
